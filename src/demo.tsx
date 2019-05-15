@@ -27,6 +27,16 @@ export default class LightboxExample extends Component<Interface,Interface2> {
         };
     }
 
+    moveNext=()=> {
+        // @ts-ignore
+        this.setState({photoIndex: (this.state.photoIndex + 1) % images.length});
+    };
+
+    movePrev=()=> {
+        // @ts-ignore
+        this.setState({photoIndex: (this.state.photoIndex + images.length - 1) % images.length});
+    };
+
     render() {
         const { photoIndex, isOpen } = this.state;
 
@@ -53,6 +63,8 @@ export default class LightboxExample extends Component<Interface,Interface2> {
                                 photoIndex: (photoIndex + 1) % images.length,
                             })
                         }
+                        onPreMovePrevRequest={this.movePrev}
+                        onPreMoveNextRequest={this.moveNext}
                     />
                 )}
             </div>
