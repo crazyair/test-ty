@@ -1,0 +1,42 @@
+.rotateLeftButton,
+.rotateRightButton {
+  position: relative;
+
+  background: transparent;
+
+  svg {
+    width: 18px;
+    height: 18px;
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+  }
+
+  border: none;
+  outline: none;
+
+  width: 40px;
+  height: 35px;
+
+  vertical-align: middle;
+  cursor: pointer;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.rotateLeftButton {
+  transform: scaleX(-1);
+}
+
+.ril-image-next {
+  display: none;
+}
