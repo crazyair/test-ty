@@ -6,7 +6,7 @@ import ReactImageLightbox, {changeAngle} from './override';
 // import Lightbox, {ILightBoxProps} from 'react-image-lightbox';
 import PropTypes from 'prop-types';
 
-// import styles from './styles.less';
+import './styles.css';
 interface Interface {
     onPreMovePrevRequest:any
     onImageRotate:any
@@ -32,11 +32,6 @@ class ReactImageLightboxRotate extends Component<Interface,Interface2> {
             nextRotate: 0,
         };
     }
-
-    componentDidMount() {
-        // styles._insertCss();
-    }
-
 
     changeRotation(angle:any) {
         let nextAngle = this.state.rotate + angle;
@@ -132,14 +127,14 @@ class ReactImageLightboxRotate extends Component<Interface,Interface2> {
             ReactImageLightbox.toolbarItemChild,
             // @ts-ignore
             ReactImageLightbox.builtinButton,
-            // styles.rotateRightButton,
+            'rotateRightButton'
         ];
         const rotateLeftButtonClasses = [
             // @ts-ignore
             ReactImageLightbox.toolbarItemChild,
             // @ts-ignore
             ReactImageLightbox.builtinButton,
-            // styles.rotateLeftButton,
+            'rotateLeftButton'
         ];
 
         let rotateLeftButtonHandler = () => this.changeRotation(-90);
